@@ -100,6 +100,11 @@
     <Compile Include="DataContextModule.cs" />
     <Compile Include="Facade\DomainFacade.cs" />
     <Compile Include="Facade\ServicesModule.cs" />
+    <Compile Include="Migrations\201504091101178_Init.cs" />
+    <Compile Include="Migrations\201504091101178_Init.Designer.cs">
+      <DependentUpon>201504091101178_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DataAccessLayerModule.cs" />
     <Compile Include="Repositories\ProjectRespository.cs" />
@@ -118,7 +123,11 @@
       <Name>Litmus.Shared</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201504091101178_Init.resx">
+      <DependentUpon>201504091101178_Init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
