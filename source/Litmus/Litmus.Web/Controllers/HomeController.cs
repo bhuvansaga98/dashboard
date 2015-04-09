@@ -7,10 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Litmus.Domain.Entity;
+using Litmus.Domain.Facade;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -26,6 +29,16 @@ namespace Litmus.Web.Controllers
         private const string GraphUserUrl = "https://graph.windows.net/{0}/users/{1}?api-version=2013-04-05";
         private static readonly string AppPrincipalId = ConfigurationManager.AppSettings["ida:ClientID"];
         private static readonly string AppKey = ConfigurationManager.AppSettings["ida:Password"];
+
+        private readonly IDomainFacade _facade;
+
+        public HomeController()
+        { }
+
+        public HomeController(IDomainFacade facade)
+        {
+            _facade = facade;
+        }
 
         public ActionResult Index()
         {
