@@ -204,6 +204,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Litmus.Data\Litmus.Data.csproj">
+      <Project>{eadf36d2-44fa-472f-a2dc-3ab2ab3d5740}</Project>
+      <Name>Litmus.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Litmus.Domain\Litmus.Domain.csproj">
+      <Project>{386154f7-95fd-4fd3-a2fe-39799225bd61}</Project>
+      <Name>Litmus.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Litmus.Shared\Litmus.Shared.csproj">
+      <Project>{9c343a70-1e16-4405-b691-97bdbfe41aaf}</Project>
+      <Name>Litmus.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
