@@ -28,5 +28,18 @@ namespace Litmus.Data.Facade
             _userRepository.Create(user);
             return user;
         }
+
+        public int DeleteProject(int id) {
+            return _projectRepository.Delete(id);
+        }
+
+        public Project EditProject(Project model) {
+            _projectRepository.Update(model);
+            return model;
+        }
+
+        public Project GetProjectById(int id) {
+            return _projectRepository.ById(id);
+        }
     }
 }

@@ -9,7 +9,11 @@ namespace Litmus.Domain.Facade
 {
     public interface IDomainFacade
     {
-        Project AddProject(Project project);
         User AddUser(User user);
+
+        Project AddProject(Project project);
+        int DeleteProject(int id);
+        Project EditProject(Project model);
+        Project GetProjectById(int id);
     }
 }

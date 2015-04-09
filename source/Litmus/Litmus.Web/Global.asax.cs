@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Litmus.Web.App_Start;
+using System;
 using System.Collections.Generic;
 using System.IdentityModel.Services;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace Litmus.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            IocHelper.CreateContainer();
         }
 
         private void WSFederationAuthenticationModule_RedirectingToIdentityProvider(object sender, RedirectingToIdentityProviderEventArgs e)

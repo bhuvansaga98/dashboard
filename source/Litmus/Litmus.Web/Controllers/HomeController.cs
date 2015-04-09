@@ -32,9 +32,6 @@ namespace Litmus.Web.Controllers
 
         private readonly IDomainFacade _facade;
 
-        public HomeController()
-        { }
-
         public HomeController(IDomainFacade facade)
         {
             _facade = facade;
@@ -42,6 +39,11 @@ namespace Litmus.Web.Controllers
 
         public ActionResult Index()
         {
+            var model = new User {
+                Name = User.Identity.Name,
+                IsDeleted = false
+            };
+            _facade.AddUser(model);
             return View();
         }
 
