@@ -12,14 +12,21 @@ namespace Litmus.Data.Facade
     public class DomainFacade : IDomainFacade
     {
         private readonly IProjectRepository _projectRepository;
-        public DomainFacade(IProjectRepository projectRepository)
+        private readonly IUserRepository _userRepository;
+        public DomainFacade(IProjectRepository projectRepository, IUserRepository userRepository)
         {
             _projectRepository = projectRepository;
+            _userRepository = userRepository;
         }
         public Project AddProject(Project project)
         {
             _projectRepository.Create(project);
             return project;
+        }
+
+        public User AddUser(User user) {
+            _userRepository.Create(user);
+            return user;
         }
     }
 }
