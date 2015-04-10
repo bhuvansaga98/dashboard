@@ -11,7 +11,7 @@
         getProjects();
 
         $scope.add = function () {
-            project.create({ name: $scope.name }).then(function (d) { getProjects(); $scope.name = ""; });
+            project.create({ name: $scope.name }).then(function (d) { getProjects(); $scope.name = ""; window.location.href="/app/project.html" });
         }
 
         $scope.edit = function () {
