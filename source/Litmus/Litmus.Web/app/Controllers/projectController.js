@@ -4,9 +4,8 @@
         .module('app')
         .controller('projectCtrl', ['$scope', 'Project', projectCtrl]);
     function projectCtrl($scope, project) {
-        $scope.name = 'First Project';
-        $scope.row = project.find({ id: $scope.id });
-        $scope.rows = project.findAll();
+        $scope.detail = project.find({ id: $scope.id });
+        project.findAll().then(function (d) { $scope.rows = d; });
         $scope.add = function () {
             return project.create({ name: $scope.name });
         }
