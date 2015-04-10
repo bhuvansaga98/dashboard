@@ -6,7 +6,11 @@
     function ($http,$q) {
           return {
               create: function (project) {
-                  return $http({ method: "post", url: "/api/project", data: project });
+                  var defer = $q.defer();
+                  $http.post('/api/project',project).success(function (data) {
+                      defer.resolve(data);
+                  });
+                  return defer.promise;
               },
               update: function (project) {
                   return $http({ method: "put", url: "/api/project", data: project });
@@ -15,7 +19,6 @@
                   return $http.get('/api/project/' + id);
               },
               findAll: function () {
-                      var temp = {};
                       var defer = $q.defer();
                       $http.get('/api/project/all').success(function (data) {
                           defer.resolve(data);

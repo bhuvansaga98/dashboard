@@ -47,7 +47,7 @@ namespace Litmus.Web.Controllers
                 };
                 _facade.AddUser(model);
             }
-            return View();
+            return View("dashboard.html",User.Identity.Name);
         }
 
         public ActionResult About()
