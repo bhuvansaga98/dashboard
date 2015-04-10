@@ -9,8 +9,10 @@ namespace Litmus.Domain.Facade
 {
     public interface IDomainFacade
     {
+        IQueryable<User> AllUser();
         User AddUser(User user);
 
+        IQueryable<Project> AllProject();
         Project AddProject(Project project);
         int DeleteProject(int id);
         Project EditProject(Project model);

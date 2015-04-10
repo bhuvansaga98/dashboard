@@ -18,15 +18,15 @@ namespace Litmus.Data.Facade
             _projectRepository = projectRepository;
             _userRepository = userRepository;
         }
+
+        public IQueryable<Project> AllProject() {
+            return _projectRepository.All;
+        }
+
         public Project AddProject(Project project)
         {
             _projectRepository.Create(project);
             return project;
-        }
-
-        public User AddUser(User user) {
-            _userRepository.Create(user);
-            return user;
         }
 
         public int DeleteProject(int id) {
@@ -40,6 +40,15 @@ namespace Litmus.Data.Facade
 
         public Project GetProjectById(int id) {
             return _projectRepository.ById(id);
+        }
+
+        public IQueryable<User> AllUser() {
+            return _userRepository.All;
+        }
+
+        public User AddUser(User user) {
+            _userRepository.Create(user);
+            return user;
         }
     }
 }

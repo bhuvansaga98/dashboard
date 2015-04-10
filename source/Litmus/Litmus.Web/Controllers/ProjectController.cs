@@ -1,7 +1,9 @@
 ﻿using Litmus.Domain.Entity;
 using Litmus.Domain.Facade;
+using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.OData;
 
 namespace Litmus.Web.Controllers{
     [RoutePrefix("api/project")]
@@ -11,6 +13,11 @@ namespace Litmus.Web.Controllers{
 
         public ProjectController(IDomainFacade facade) {
             _facade = facade;
+        }
+
+        [HttpGet, Route("all"), EnableQuery]
+        public IQueryable<Project> GetAll() {
+            return _facade.AllProject();
         }
 
         [HttpGet, Route("{id}")]
