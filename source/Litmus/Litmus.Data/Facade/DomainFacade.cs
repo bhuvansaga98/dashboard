@@ -25,7 +25,10 @@ namespace Litmus.Data.Facade
 
         public Project AddProject(Project project)
         {
-            _projectRepository.Create(project);
+            var record = _projectRepository.All.Where(x => x.UserId == project.UserId && x.Name == project.Name).FirstOrDefault();
+            if(record == null) {
+                _projectRepository.Create(project);
+            }
             return project;
         }
 
