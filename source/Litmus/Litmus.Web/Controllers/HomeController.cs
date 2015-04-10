@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Linq;
+using Litmus.Domain.Entity;
+using Litmus.Domain.Facade;
+using Litmus.Web.Models;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Newtonsoft.Json;
+using System;
 using System.Configuration;
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Runtime.InteropServices;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Litmus.Domain.Entity;
-using Litmus.Domain.Facade;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Litmus.Web.Models;
 
 namespace Litmus.Web.Controllers
 {
@@ -37,10 +31,11 @@ namespace Litmus.Web.Controllers
             _facade = facade;
         }
 
+        [Authorize]
         public ActionResult Index()
         {
             var user = _facade.AllUser().FirstOrDefault(x => x.Name == User.Identity.Name);
-            if(string.IsNullOrWhiteSpace(user.Name)) {
+            if(user==null) {
                 var model = new User {
                     Name = User.Identity.Name,
                     IsDeleted = false

@@ -2,9 +2,15 @@
     'use strict';
     angular
     .module('app')
-    .controller('projectCtrl', ['$scope', 'Project', projectCtrl]);
-    function projectCtrl($scope, project) {
+    .controller('projectCtrl', ['$scope','$state', 'Project', projectCtrl])
+    .controller('homeCtrl', ['$scope', homeCtrl]);
 
+    function homeCtrl($scope) {
+        $scope.name = "hello";
+    }
+
+    function projectCtrl($scope,$state, project) {
+        //$state.params.id
         $scope.detail = project.find({ id: $scope.id });
 
         function getProjects() { project.findAll().then(function (d) { $scope.rows = d; }); }

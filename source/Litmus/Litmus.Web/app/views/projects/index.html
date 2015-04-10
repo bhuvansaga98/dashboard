@@ -1,0 +1,19 @@
+<div ng-controller="projectCtrl">
+    <div class="header">
+        <a href="#/project/create" class="btn btn-info"><i class="fa fa-plus"></i> Create</a>
+    </div>
+    <div ng-repeat="row in rows">
+        <div class="card">
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{row.Name}}<a href="#/project/edit/{{row.Id}}" class="pull-right"><i class="fa fa-cog"></i></a></h3>
+                    </div>
+                    <div class="panel panel-body">
+                        <p>Data not available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
