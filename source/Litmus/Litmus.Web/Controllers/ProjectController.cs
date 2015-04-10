@@ -38,6 +38,8 @@ namespace Litmus.Web.Controllers{
         [HttpPost, Route]
         public HttpResponseMessage Post(Project model) {
             if(ModelState.IsValid) {
+                var UserId = _facade.AllUser().FirstOrDefault(x => x.Name == User.Identity.Name).Id;
+                model.UserId = UserId; 
                 var item = _facade.AddProject(model);
                 return Accepted(item);
             }

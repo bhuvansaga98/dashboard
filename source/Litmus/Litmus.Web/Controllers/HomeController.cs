@@ -39,11 +39,14 @@ namespace Litmus.Web.Controllers
 
         public ActionResult Index()
         {
-            var model = new User {
-                Name = User.Identity.Name,
-                IsDeleted = false
-            };
-            _facade.AddUser(model);
+            var user = _facade.AllUser().FirstOrDefault(x => x.Name == User.Identity.Name);
+            if(string.IsNullOrWhiteSpace(user.Name)) {
+                var model = new User {
+                    Name = User.Identity.Name,
+                    IsDeleted = false
+                };
+                _facade.AddUser(model);
+            }
             return View();
         }
 
