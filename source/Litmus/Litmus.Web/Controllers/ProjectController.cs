@@ -29,7 +29,7 @@ namespace Litmus.Web.Controllers{
         [HttpPut, Route]
         public HttpResponseMessage Put(Project model) {
             if(ModelState.IsValid) {
-                var item = _facade.AddProject(model);
+                var item = _facade.EditProject(model);
                 return Accepted(item);
             }
             return Bad(ModelState);
@@ -38,7 +38,7 @@ namespace Litmus.Web.Controllers{
         [HttpPost, Route]
         public HttpResponseMessage Post(Project model) {
             if(ModelState.IsValid) {
-                var item = _facade.EditProject(model);
+                var item = _facade.AddProject(model);
                 return Accepted(item);
             }
             return Bad(ModelState);

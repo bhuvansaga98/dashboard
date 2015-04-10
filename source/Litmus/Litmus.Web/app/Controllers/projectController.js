@@ -2,12 +2,19 @@
     'use strict';
     angular
         .module('app')
-        .controller('projectCtrl',['$scope', 'Project', projectCtrl]);
+        .controller('projectCtrl', ['$scope', 'Project', projectCtrl]);
     function projectCtrl($scope, project) {
-        $scope.name = 'Gaurav';
-        $scope.rows = project.find();
+        $scope.name = 'First Project';
+        $scope.row = project.find({ id: $scope.id });
+        $scope.rows = project.findAll();
         $scope.add = function () {
-            var tmp = project.create({ name: $scope.name });
+            return project.create({ name: $scope.name });
+        }
+        $scope.edit = function () {
+            return project.update({ name: $scope.name });
+        }
+        $scope.remove = function () {
+            return project.remove({ id: $scope.id });
         }
     }
 })();

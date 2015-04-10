@@ -188,7 +188,8 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\Controllers\projectController.js" />
-    <Content Include="app\Services\service.js" />
+    <Content Include="app\js\angular.min.js" />
+    <Content Include="app\Services\projectService.js" />
     <Content Include="app\css\app.css" />
     <Content Include="app\css\app.min.css" />
     <Content Include="app\css\font.css" />
