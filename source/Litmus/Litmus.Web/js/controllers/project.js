@@ -38,6 +38,7 @@ app.controller('ProjectCtrl', ['$scope', '$http', '$q', function ($scope, $http,
 
     $scope.add = function () {
         project.create({ name: $scope.name }).then(function (d) {
+            $scope.name = '';
             loadProjects();
         });
     }
