@@ -22,13 +22,13 @@ angular.module('app')
             resolve: {
                 deps: [
                     '$ocLazyLoad',
-                    function($ocLazyLoad) {
+                    function ($ocLazyLoad) {
                         return $ocLazyLoad.load(['js/controllers/chart.js']);
                     }
                 ]
             }
         })
         .state('app.project', { url: '/projects', templateUrl: 'tpl/projects/index.html' })
-        .state('app.project.create', { url: '/create', templateUrl: 'tpl/projects/create.html' })
-;
+        .state('app.projectcreate', { url: '/project/create', templateUrl: 'tpl/projects/create.html' })
+    ;
 }]);
