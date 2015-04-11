@@ -23,7 +23,7 @@ app.controller('ProjectCtrl', ['$scope', '$http', '$q', function ($scope, $http,
         findAll: function () {
             var defer = $q.defer();
             $http.get('/api/project/all').success(function (data) {
-                defer.resolve(data);
+                defer.resolve(data.reverse());
             });
             return defer.promise;
         },
