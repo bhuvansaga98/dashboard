@@ -20,23 +20,12 @@ namespace Litmus.Web.Controllers
             WsFederationConfiguration config = FederatedAuthentication.FederationConfiguration.WsFederationConfiguration;
 
             // Redirect to SignOutCallback after signing out.
-            string callbackUrl = Url.Action("SignOutCallback", "Account", routeValues: null, protocol: Request.Url.Scheme);
+            string callbackUrl = Url.Action("About", "Home", routeValues: null, protocol: Request.Url.Scheme);
             SignOutRequestMessage signoutMessage = new SignOutRequestMessage(new Uri(config.Issuer), callbackUrl);
             signoutMessage.SetParameter("wtrealm", IdentityConfig.Realm ?? config.Realm);
             FederatedAuthentication.SessionAuthenticationModule.SignOut();
 
             return new RedirectResult(signoutMessage.WriteQueryString());
-        }
-
-        public ActionResult SignOutCallback()
-        {
-            if (Request.IsAuthenticated)
-            {
-                // Redirect to home page if the user is authenticated.
-                return RedirectToAction("Index", "Home");
-            }
-
-            return View();
         }
     }
 }

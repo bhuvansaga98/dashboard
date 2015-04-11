@@ -82,7 +82,7 @@ namespace Litmus.Web.Controllers
             string responseString = await response.Content.ReadAsStringAsync();
             UserProfile profile = JsonConvert.DeserializeObject<UserProfile>(responseString);
 
-            return View(profile);
+            return Json(profile,JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -276,6 +276,7 @@
     <Content Include="js\controllers\toaster.js" />
     <Content Include="js\controllers\tree.js" />
     <Content Include="js\controllers\uigrid.js" />
+    <Content Include="js\controllers\user.js" />
     <Content Include="js\controllers\vectormap.js" />
     <Content Include="js\controllers\xeditable.js" />
     <Content Include="js\directives\setnganimate.js" />
