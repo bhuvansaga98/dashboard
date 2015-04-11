@@ -11,6 +11,7 @@ app.controller('ProjectCtrl', ['$scope', '$http', '$q', function ($scope, $http,
             $http.post('/api/project', item).success(function (data) {
                 defer.resolve(data);
             });
+            window.location.href = "#/app/projects";
             return defer.promise;
         },
         update: function (item) {
