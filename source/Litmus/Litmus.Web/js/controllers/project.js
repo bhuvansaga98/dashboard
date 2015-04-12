@@ -20,12 +20,9 @@ app.controller('ProjectCtrl', ['$scope', '$http', '$q', function ($scope, $http,
         find: function (id) {
             return $http.get('/api/project/' + id);
         },
-        findAll: function () {
-            var defer = $q.defer();
-            $http.get('/api/project/all').success(function (data) {
-                defer.resolve(data.reverse());
-            });
-            return defer.promise;
+        findAll: function (args) {
+            args = args || '?$orderby=Id desc';
+            $http.get('/api/project/all'+args);
         },
         remove: function (id) {
             return $http.delete('api/project/' + id);
