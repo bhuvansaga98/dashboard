@@ -333,6 +333,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modules\placeholder.js" />
     <Content Include="Scripts\ngStorage.js" />
     <Content Include="Scripts\ocLazyLoad.js" />
     <Content Include="Scripts\respond.js" />
@@ -435,7 +436,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="js\controllers\uploads\" />
-    <Folder Include="Scripts\modules\" />
     <Folder Include="Views\Setup\" />
   </ItemGroup>
   <ItemGroup>
