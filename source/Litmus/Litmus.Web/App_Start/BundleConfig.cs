@@ -25,7 +25,32 @@ namespace Litmus.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/extra/*.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/script/spa").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/angular.js",
+                        "~/Scripts/ngStorage.js",
+                        "~/Scripts/ocLazyLoad.js",
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/angular-*",
+                        "~/Scripts/vendors/*.js",
+                        "~/js/app.js",
+                        "~/Scripts/modules/*.js",
+                        "~/js/config.js",
+                        "~/js/config.*",
+                        "~/js/main.js",
+                        "~/js/services/*.js",
+                        "~/js/filters/*.js",
+                        "~/js/directives/*.js",
+                        "~/js/controllers/*.js"
+                ).IncludeDirectory("~/js/app/", "*.js", true));
+
+            bundles.Add(new ScriptBundle("~/Script/jquery-{version}.js").Include(
+                      "~/Script/bootstrap.css",
+                      "~/Script/extra/*.css",
+                      "~/Script/site.css"));
         }
     }
 }
