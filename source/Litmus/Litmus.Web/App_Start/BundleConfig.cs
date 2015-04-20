@@ -25,7 +25,11 @@ namespace Litmus.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/extra/*.css",
+                      "~/Content/animate.css",  
+                      "~/Content/font-awesome.css",
+                      "~/Content/simple-line-icons.css",
+                      "~/Content/font.css",
+                      "~/Content/app.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/script/spa").Include(
@@ -46,11 +50,6 @@ namespace Litmus.Web
                         "~/js/directives/*.js",
                         "~/js/controllers/*.js"
                 ).IncludeDirectory("~/js/app/", "*.js", true));
-
-            bundles.Add(new ScriptBundle("~/Script/jquery-{version}.js").Include(
-                      "~/Script/bootstrap.css",
-                      "~/Script/extra/*.css",
-                      "~/Script/site.css"));
         }
     }
 }

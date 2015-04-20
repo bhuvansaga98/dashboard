@@ -17,11 +17,11 @@ namespace Litmus.Web.Controllers
     {
         public ActionResult SignOut()
         {
-            WsFederationConfiguration config = FederatedAuthentication.FederationConfiguration.WsFederationConfiguration;
+            var config = FederatedAuthentication.FederationConfiguration.WsFederationConfiguration;
 
             // Redirect to SignOutCallback after signing out.
             string callbackUrl = Url.Action("", "", routeValues: null, protocol: Request.Url.Scheme);
-            SignOutRequestMessage signoutMessage = new SignOutRequestMessage(new Uri(config.Issuer), callbackUrl);
+            var signoutMessage = new SignOutRequestMessage(new Uri(config.Issuer), callbackUrl);
             signoutMessage.SetParameter("wtrealm", IdentityConfig.Realm ?? config.Realm);
             FederatedAuthentication.SessionAuthenticationModule.SignOut();
 

@@ -11,6 +11,8 @@ namespace Litmus.Data
 {
     public class DataContext : DbContext, IDataContext
     {
+
+        public DataContext():base(nameOrConnectionString:"DefaultConnection"){}
         public DbSet<Project> Projects { get; set; }
 
 

@@ -187,12 +187,12 @@
     <Compile Include="Utils\DatabaseIssuerNameRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\extra\animate.css" />
+    <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\extra\font-awesome.css" />
-    <Content Include="Content\extra\simple-line-icons.css" />
-    <Content Include="Content\extra\app.css" />
-    <Content Include="Content\extra\font.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\simple-line-icons.css" />
+    <Content Include="Content\app.css" />
+    <Content Include="Content\font.css" />
     <Content Include="Content\site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -336,9 +336,9 @@
     <Content Include="Scripts\ngStorage.js" />
     <Content Include="Scripts\ocLazyLoad.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\ui-bootstrap-tpls.js" />
-    <Content Include="Scripts\ui-bootstrap.js" />
-    <Content Include="Scripts\ui-utils.js" />
+    <Content Include="Scripts\vendors\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\vendors\ui-bootstrap.js" />
+    <Content Include="Scripts\vendors\ui-utils.js" />
     <Content Include="tpl\app.html" />
     <Content Include="tpl\apps_contact.html" />
     <Content Include="tpl\apps_note.html" />
@@ -436,7 +436,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="js\controllers\uploads\" />
     <Folder Include="Scripts\modules\" />
-    <Folder Include="Scripts\vendors\" />
     <Folder Include="Views\Setup\" />
   </ItemGroup>
   <ItemGroup>
